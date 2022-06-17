@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/admin/delete/{id}(id=${user.id})}" method="post">
+    <input disabled th:field="*{user.username}"><br>
+    <input disabled th:field="*{user.email}"><br>
+    <select disabled th:field="*{user.roles}" multiple>
+        <th:block th:each="role : ${roles}">
+            <option th:value="${role.id}" th:text="${role.name}"></option>
+        </th:block>
+    </select>
+    <button type="submit">Delete</button>
+</form>
+</body>
+</html>

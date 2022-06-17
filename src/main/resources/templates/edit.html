@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/admin/edit}" method="post">
+    <input type="hidden" th:field="*{user.id}">
+    <input th:field="*{user.username}"><br>
+    <input th:field="*{user.email}"><br>
+    <input th:field="*{user.password}"><br>
+    <select th:field="*{user.roles}" multiple>
+        <th:block th:each="role : ${roles}">
+            <option th:value="${role.id}" th:text="${role.name}"></option>
+        </th:block>
+    </select>
+    <button type="submit">Create</button>
+</form>
+</body>
+</html>

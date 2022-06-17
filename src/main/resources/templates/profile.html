@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Profile</h1>
+<hr>
+ <a href="/logout">logout</a>
+<hr>
+<table>
+    <th:block th:each="user : ${users}">
+        <tr>
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.username}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.rolesToString}"></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>
